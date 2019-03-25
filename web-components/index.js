@@ -1,4 +1,5 @@
-import { topHeadlinesUrl } from './newsApi';
+import './news-article.js';
+import { topHeadlinesUrl } from './newsApi.js';
 window.addEventListener('load', () => {
 	fetchNews();
 });
