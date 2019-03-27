@@ -1,0 +1,17 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "learning testing in Js using Mocha",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*"
+  },
+  "author": "ruheni",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^6.0.2"
+  }
+}
