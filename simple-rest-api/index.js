@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+const bear = require('./models/bear');
 // routes for api
 const router = express.Router();
 
@@ -11,6 +12,11 @@ const router = express.Router();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/api', router);
+
+mongoose.connect(
+	'mongodb+srv://ruheni:Ruheni99@cluster0-i11r8.azure.mongodb.net/test?retryWrites=true',
+	{ useNewUrlParser: true }
+);
 
 const port = process.env.PORT || 3000;
 
@@ -24,7 +30,7 @@ let message = [
 	}
 ];
 
-// test route
+// basic routes
 router.get('/', async (req, res) => {
 	await res.json(message);
 });
