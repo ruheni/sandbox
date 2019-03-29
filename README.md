@@ -13,7 +13,7 @@ I explore how to make `custom HTML elements` in JavaScript and using the `Shadow
 
 [**3. Testing**](https://github.com/ruheni/sandbox/tree/master/testing)
 
-`Mocha` is used for learning how to write and run `unit tests` in JavaScript. More tests will be coming up frequently as I create more applications to improve my skills in writing tests.
+`Mocha` is used for writing and running `unit tests` in JavaScript. I use it to learn how to write tests for my work, from the basics. More tests will be coming up frequently as I create more applications to improve my skills in writing tests.
 
 [**4. Simple REST API**](https://github.com/ruheni/sandbox/tree/master/simple-rest-api) 
 
