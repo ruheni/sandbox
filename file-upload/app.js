@@ -2,15 +2,26 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' });
 
 const app = express();
+
+// set storage
+const storage = multer.diskStorage({
+	destination: (req, file, cb) => {
+		cb(null, 'uploads');
+	},
+	filename: (req, file, cb) => {
+		cb(null, file.fieldname + '-' + Date.now());
+	}
+});
+
+const upload = multer({ storage });
 
 app.get('/', (req, res) => {
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/', upload.single('file'), (req, res, next) => {
+app.post('/file', upload.single('file'), (req, res, next) => {
 	const file = req.file;
 	if (!file) {
 		const err = new Error('No file selected yet');
