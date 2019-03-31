@@ -18,3 +18,9 @@ I explore how to make `custom HTML elements` in JavaScript and using the `Shadow
 [**4. Simple REST API**](https://github.com/ruheni/sandbox/tree/master/simple-rest-api) 
 
 As for this folder, I create a simple REST API using `Express`, `Mongoose`, `body-parser` and `Insomnia` to test my API to return simple JSON data on bears. `Mongoose` is used as the Object Relational Mapper(ORM) to create and export the bear model. 
+
+[**5. File Upload**](https://github.com/ruheni/sandbox/tree/master/file-upload)
+
+This folder contains a simple application demonstrating file uploading in JavaScript using `ExpressJs`, 
+`Multer` and `body-parser` to submit multi-part files to `uploads/ folder. `Materialize CSS` is also used for 
+making a simple UI, buttons and the form-fields for the simple prototype for the upload form.
