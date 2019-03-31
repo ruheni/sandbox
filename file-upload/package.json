@@ -1,0 +1,17 @@
+{
+	"name": "file-upload",
+	"version": "1.0.0",
+	"description": "simple file upload with multer and expressjs",
+	"main": "app.js",
+	"scripts": {
+		"devstart": "nodemon app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "ruheni alex",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.18.3",
+		"express": "^4.16.4",
+		"multer": "^1.4.1"
+	}
+}
