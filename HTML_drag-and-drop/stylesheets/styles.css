@@ -1,0 +1,10 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #474787;
+	color: white;
+}
+.title {
+	text-align: center;
+	font-size: 50px;
+}
