@@ -3,3 +3,5 @@ testing/node_modules
 simple-rest-api/node_modules
 file-upload/node_modules
 file-upload/uploads/*
+gowebapp/better-comments.js
+quickstart/themes/ananke
