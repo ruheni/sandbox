@@ -3,17 +3,36 @@
  * in a manner that is similar but not identical to popen(3)
  */
 
+// const { spawn } = require("child_process");
+// const ls = spawn("ls", ["-lh", "/usr"]);
+
+// ls.stdout.on("data", data => {
+//   console.log(`stdout: ${data}`);
+// });
+
+// ls.stderr.on("data", data => {
+//   console.log(`stderr: ${data}`);
+// });
+
+// ls.on("close", code => {
+//   console.log(`child process exited with code ${code}`);
+// });
+/**
+ * child_process enables access to OS functionalities by running
+ * any system command inside a, well, child process.
+ * Ways of creating a child process: spawn(), fork(), exec() execFile()
+ * 1. spawn()
+ * launches a command in a new process
+ * 2. fork()
+ * 3. exec()
+ * 4. execFile()
+ */
+
 const { spawn } = require("child_process");
-const ls = spawn("ls", ["-lh", "/usr"]);
+const child = spawn("pwd");
 
-ls.stdout.on("data", data => {
-  console.log(`stdout: ${data}`);
-});
+child.stdout.on("data", data => console.log(`path: ${data}`));
 
-ls.stderr.on("data", data => {
-  console.log(`stderr: ${data}`);
-});
-
-ls.on("close", code => {
-  console.log(`child process exited with code ${code}`);
+child.on("exit", (code, signal) => {
+  `child process exited with ${code} and signal ${signal}`;
 });
