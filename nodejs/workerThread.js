@@ -3,6 +3,8 @@
  * use of threads that execute Js in parallel.
  * Workers are useful for performing CPU-intensive
  * Js ops. Don't help much with I/O intensive work.
+ * 
+ * The example spawns a worker thread for each parse()
  */
 const {
   Worker,
