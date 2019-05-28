@@ -3,20 +3,6 @@
  * in a manner that is similar but not identical to popen(3)
  */
 
-// const { spawn } = require("child_process");
-// const ls = spawn("ls", ["-lh", "/usr"]);
-
-// ls.stdout.on("data", data => {
-//   console.log(`stdout: ${data}`);
-// });
-
-// ls.stderr.on("data", data => {
-//   console.log(`stderr: ${data}`);
-// });
-
-// ls.on("close", code => {
-//   console.log(`child process exited with code ${code}`);
-// });
 /**
  * child_process enables access to OS functionalities by running
  * any system command inside a, well, child process.
@@ -29,10 +15,23 @@
  */
 
 const { spawn } = require("child_process");
-const child = spawn("pwd");
+const ls = spawn("ls", ["-lh", "/usr"]);
+const pwd = spawn("pwd");
 
-child.stdout.on("data", data => console.log(`path: ${data}`));
+pwd.stdout.on("data", data => console.log(`path: ${data}`));
 
-child.on("exit", (code, signal) => {
+pwd.on("exit", (code, signal) => {
   `child process exited with ${code} and signal ${signal}`;
+});
+
+ls.stdout.on("data", data => {
+  console.log(`stdout: ${data}`);
+});
+
+ls.stderr.on("data", data => {
+  console.log(`stderr: ${data}`);
+});
+
+ls.on("close", code => {
+  console.log(`child process exited with code ${code}`);
 });
