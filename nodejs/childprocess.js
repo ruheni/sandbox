@@ -19,6 +19,12 @@ const ls = spawn("ls", ["-lh", "/usr"]);
 const pwd = spawn("pwd");
 
 const child = spawn("find", [".", "-type", "f"]);
+// Inheritance from parent objects
+const childOne = spawn("find . -type f | wc -l", {
+  stdio: "inherit",
+  shell: true,
+  cwd: '/Users/User/Downloads'
+});
 
 const py = spawn("py", ["--version"]);
 
