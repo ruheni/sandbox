@@ -18,10 +18,34 @@ const { spawn } = require("child_process");
 const ls = spawn("ls", ["-lh", "/usr"]);
 const pwd = spawn("pwd");
 
+const child = spawn("find", [".", "-type", "f"]);
+
+const py = spawn("py", ["--version"]);
+
+const wc = spawn("wc");
+
+process.stdin.pipe(wc.stdin);
+wc.stdout.on("data", data => {
+  console.log(`child stdout: ${data}`);
+});
+
+py.stdout.on("data", data => console.log(`Python version: ${data}`));
+
+py.on("exit", (code, signal) => {
+  console.log(`child process exited with ${code} and signal ${signal}`);
+});
+
 pwd.stdout.on("data", data => console.log(`path: ${data}`));
 
 pwd.on("exit", (code, signal) => {
-  `child process exited with ${code} and signal ${signal}`;
+  console.log(`child process exited with ${code} and signal ${signal}`);
+});
+
+child.stdout.on("data", data => {
+  console.log(`child stdout:\n${data}`);
+});
+child.stderr.on("data", data => {
+  console.error(`child stderr: ${data}`);
 });
 
 ls.stdout.on("data", data => {
