@@ -15,8 +15,8 @@
 	"author": "ruheni alex",
 	"license": "ISC",
 	"dependencies": {
-		"body-parser": "^1.18.3",
-		"express": "^4.16.4",
+		"body-parser": "^1.20.4",
+		"express": "^4.22.1",
 		"mongoose": "^5.4.14"
 	},
 	"devDependencies": {
